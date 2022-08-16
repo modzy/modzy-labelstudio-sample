@@ -1,0 +1,45 @@
+Beijing, Asia
+Bangkok, Asia
+Delhi, Asia
+Hong Kong, Asia
+Indonesia, Asia
+Tokyo, Asia
+Sydney, Australia
+Havana, Carribbean
+Central America
+Mexico City, Central America
+Moscow, Eastern-Europe
+Saint Petersburg, Eastern-Europe
+Amsterdam, Europe
+Athens, Europe
+Barcelona, Europe
+Berlin, Europe
+Budapest, Europe
+Dublin, Europe
+Florence, Europe
+Helsinki, Europe
+Lisbon, Europe
+London, Europe
+Madrid, Europe
+Paris, Europe
+Rome, Europe
+Valencia, Europe
+Cairo, Northern Africa
+Middle East
+Dubai, Middle East
+Istanbul, Middle East
+Chicago, North America
+Dallas, North America
+Denver, North America
+Los Angeles, North America
+New York, North America
+Quebec City, North America
+San Francisco, North America
+Toronto, North America
+Vancouver, North America
+Northwestern Africa
+Buenos Aires, South America
+Rio, South America
+Santiago, South America
+Sub-Saharan Africa
+Cape Town, Sub-Saharan Africa

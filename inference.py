@@ -1,6 +1,5 @@
 import dropbox
 import os
-import pprint
 from modzy import ApiClient
 from modzy._util import file_to_bytes
 

@@ -3,7 +3,11 @@ import os
 from modzy import ApiClient
 from modzy._util import file_to_bytes
 
-def inference():
+#Creates a Modzy client
+client = ApiClient(base_url="https://demo.modzy.engineering/api", api_key=os.environ.get("MODZY_API_KEY"))
+dbx = dropbox.Dropbox(os.environ.get("DROPBOX_ACCESS_TOKEN"))
+
+def main():
     #Runs an inference on each image in this folder and then save the image to Dropbox
     image_folder = "images-test"
     for filename in os.listdir(image_folder):
@@ -17,9 +21,6 @@ def inference():
         upload_image(f,job_ID)
 
 def modzy_inference(image_path,image_ID):
-    #Creates a Modzy client
-    client = ApiClient(base_url="https://app.modzy.com/api", api_key=os.environ.get("MODZY_API_KEY"))
-
     #Creates the input sources object and base64 encodes the image
     sources = {}
     sources[image_ID] = {
@@ -30,13 +31,9 @@ def modzy_inference(image_path,image_ID):
     job = client.jobs.submit_file("aevbu1h3yw", "1.0.1", sources, True)
     return job.get("jobIdentifier")
 
-def upload_image(image_path,image_ID):
-    #Creates a Dropbox client
-    dbx = dropbox.Dropbox(os.environ.get("DROPBOX_ACCESS_TOKEN"))
-    
+def upload_image(image_path,image_ID):    
     #Uploads the image to Dropbox
     dbx.files_upload(file_to_bytes(image_path),'/' + str(image_ID) + '.jpg')
 
-
 if __name__ == '__main__':
-    inference()
+    main()

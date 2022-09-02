@@ -14,21 +14,21 @@ As a result, you'll need:
 ## Getting started
 
 ### Label Studio Set-up
-First, install Label Studio and start it up. Instructions can be found (here)[https://github.com/heartexlabs/label-studio#try-out-label-studio] (installing with PIP was a breeze).
+First, install Label Studio and start it up. Instructions can be found [here](https://github.com/heartexlabs/label-studio#try-out-label-studio) (installing with PIP was a breeze).
 
-Once it's running, log in and download your API (access token|https://labelstud.io/guide/api.html#Authenticate-to-the-API).
+Once it's running, log in and download your API [access token](https://labelstud.io/guide/api.html#Authenticate-to-the-API).
 
 ### Modzy Set-up
-In your instance of Modzy, (create a project)[https://docs.modzy.com/docs/how-to-create-a-project] and then download your project (api key)[https://docs.modzy.com/docs/how-to-use-a-project]
+In your instance of Modzy, [create a project](https://docs.modzy.com/docs/how-to-create-a-project) and then download your project [api key](https://docs.modzy.com/docs/how-to-use-a-project)
 
 ### Dropbox Set-up
 If you don't have one, create a free Dropbox account.
 
-Then, you'll need to create a (Dropbox App)[https://www.dropbox.com/developers/reference/getting-started]
+Then, you'll need to create a [Dropbox App](https://www.dropbox.com/developers/reference/getting-started)
 
 Next, give your app the following permissions: `files.metadata.write` `files.content.write` `files.content.read` `sharing.write`
 
-Finally, generate an (access token)[https://dropbox.tech/developers/generate-an-access-token-for-your-own-account]
+Finally, generate an [access token](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account)
 
 ### Inference Set-Up
 Before you can start running the sample images as inferences, you'll need to do the following:

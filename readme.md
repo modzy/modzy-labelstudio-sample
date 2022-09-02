@@ -13,10 +13,10 @@ As a result, you'll need:
 
 ## Getting started
 
-### Label Studio set-up
+### Label Studio Set-up
 First, install Label Studio and start it up. Instructions can be found (here)[https://github.com/heartexlabs/label-studio#try-out-label-studio] (installing with PIP was a breeze).
 
-Once it's running, log in and download your API (access token)[https://labelstud.io/guide/api.html#Authenticate-to-the-API].
+Once it's running, log in and download your API (access token|https://labelstud.io/guide/api.html#Authenticate-to-the-API).
 
 ### Modzy Set-up
 In your instance of Modzy, (create a project)[https://docs.modzy.com/docs/how-to-create-a-project] and then download your project (api key)[https://docs.modzy.com/docs/how-to-use-a-project]

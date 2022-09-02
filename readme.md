@@ -18,6 +18,8 @@ First, install Label Studio and start it up. Instructions can be found [here](ht
 
 Once it's running, log in and download your API [access token](https://labelstud.io/guide/api.html#Authenticate-to-the-API).
 
+Create a project in Label Studio. Then go to "Settings" > "Labeling Interface" and past in [label-classes.html](label-studio-setup/label-classes.html) as code.
+
 ### Modzy Set-up
 In your instance of Modzy, [create a project](https://docs.modzy.com/docs/how-to-create-a-project) and then download your project [api key](https://docs.modzy.com/docs/how-to-use-a-project)
 
@@ -35,17 +37,17 @@ Before you can start running the sample images as inferences, you'll need to do 
  * Clone this repo
  * [Optional, but recommended] Create a virtual environment within your project folder and activate it
  * Run `$ pip install -r requirements.txt` to install all necessary dependencies
- * Create a copy of `.env-sample` and rename it to `.env`. Then update it to include your API access tokens for Modzy, Dropbox, and Label Studio.
+ * Create a copy of [.env-sample](.env-sample) and rename it to `.env`. Then update it to include your API access tokens for Modzy, Dropbox, and Label Studio.
  * Run `$ source .env` to load your environment variables
- * Update the `base_url` variable in `inference.py` to the URL of your instance of Modzy
+ * Update the `base_url` variable in [inference.py](inference.py) to the URL of your instance of Modzy
 
 ### Run inference.py
 Run `$ python3 inference.py`
 This should send all of the images in the images-test folder to a model in Modzy, and upload all of those images to your dropbox account
 
 ### Label Studio Set-up
-* Update the `base_url` variable in `import-annotations.py` to the URL of your instance of Modzy
-* Update the `labelStudioURL` variable in `import-annotations.py` to the URL of your instance of Label Studio
+* Update the `base_url` variable in [import-annotations.py](import-annotations.py) to the URL of your instance of Modzy
+* Update the `labelStudioURL` variable in [import-annotations.py](import-annotations.py) to the URL of your instance of Label Studio
 
 ### Run import-annotations.py
 Run `$ python3 import-annotations.py`

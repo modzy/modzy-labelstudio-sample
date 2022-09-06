@@ -46,7 +46,7 @@ def main():
       "image": path_urls[results_data[f'job_{i}']["job_id"]],
       "predicted_value": "Predicted value: " + results_data[f'job_{i}']["label"] + " (" + str(results_data[f'job_{i}']["score"]) + " certainty) 👍: " + str(results_data[f'job_{i}']["num_upvotes"]) + " 👎: " + str(results_data[f'job_{i}']["num_downvotes"]),
       "downvotes": results_data[f'job_{i}']["num_downvotes"],
-      "explainable_url": "Explanability link TBD"
+      "explainable_url": f'{os.getenv("MODZY_BASE_URL")}/operations/explainability/{results_data["job_{}".format(i)]["job_id"]}/{results_data["job_{}".format(i)]["input_name"]}'
     },
     "predictions": [{
       "model_version": results_data[f'job_{i}']["model_version"],

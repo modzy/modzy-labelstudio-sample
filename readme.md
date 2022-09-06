@@ -10,11 +10,14 @@
 This sample project demonstrates how to use Modzy and Label studio to dynamically re-label production inferences using a combination of semi-supervised learning, explainable AI, and human-in-the-loop review. This is a comprehensive and low-lift way to create training data sets from production data that can be used to retrain a machine learning model.
 
 This sample project uses:
-* Label Studio: For labeling production inference results
-* Modzy: For model serving and explainability
-* Dropbox: For storing images
 
-## Getting started
+<img src="https://www.modzy.com/wp-content/uploads/modzy-logo.png" alt="Modzy logo" width="75"/>    For model inference and explainability
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Dropbox_logo_2017.svg/2560px-Dropbox_logo_2017.svg.png" alt="Modzy logo" width="85"/>    As a makeshift data lake for storing images
+
+<img src="https://assets.website-files.com/612013f17754cb859455543d/6120e2acee27ae27a0514ccb_logofirst.svg" alt="Modzy logo" width="115"/>    For labeling production inference results
+
+## Installation & Set-Up
 
 ### Label Studio Set-up
  * First, install Label Studio and start it up. Instructions can be found [here](https://github.com/heartexlabs/label-studio#try-out-label-studio) (installing with PIP was a breeze)
@@ -30,7 +33,7 @@ In your instance of Modzy, [create a project](https://docs.modzy.com/docs/how-to
  * Next, give your app the following permissions: `files.metadata.write` `files.content.write` `files.content.read` `sharing.write`
  * Finally, generate an [access token](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account)
 
-### Inference Set-Up
+### Environment Set-Up
 Before you can start running the sample images as inferences, you'll need to do the following:
  * Clone this repo
  * [Optional, but recommended] Create a virtual environment within your project folder and activate it
@@ -38,15 +41,21 @@ Before you can start running the sample images as inferences, you'll need to do 
  * Create a copy of [.env-sample](.env-sample) and rename it to `.env`. Then update it to include your API access tokens for Modzy, Dropbox, and Label Studio
  * Run `$ source .env` to load your environment variables
  * Update the `base_url` variable in [inference.py](inference.py) to the URL of your instance of Modzy
+ * Update the `base_url` variable in [import-annotations.py](import-annotations.py) to the URL of your instance of Modzy
+ * Update the `labelStudioURL` variable in [import-annotations.py](import-annotations.py) to the URL of your instance of Label Studio
 
-### Run inference.py
-Run `$ python3 inference.py`
-This should send all of the images in the images-test folder to a model in Modzy, and upload all of those images to your dropbox account.
+## Usage
 
-### Label Studio Set-up
-* Update the `base_url` variable in [import-annotations.py](import-annotations.py) to the URL of your instance of Modzy
-* Update the `labelStudioURL` variable in [import-annotations.py](import-annotations.py) to the URL of your instance of Label Studio
+### Send sample images to Modzy and Dropbox
+The next step will send the images in the `/images` folder to a model that executes "Image-based Geolocation" which means that it will try to predict where the world the image was taken. Then, the image will be uploaded to Dropbox.
+
+In your terminal run:
+
+`$ python3 inference.py`
 
 ### Run import-annotations.py
-Run `$ python3 import-annotations.py`
-This should send all of the predictions generated from Modzy over to Label Studio for review and labeling.
+Finally, send all predictions generated from Modzy over to Label Studio for review and labeling.
+
+In your terminal run:
+
+`$ python3 import-annotations.py`

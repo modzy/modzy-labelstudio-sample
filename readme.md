@@ -39,14 +39,12 @@ Before you can start running the sample images as inferences, you'll need to do 
  * Run `$ pip install -r requirements.txt` to install all necessary dependencies
  * Create a copy of [.env-sample](.env-sample) and rename it to `.env`. Then update it to include your API access tokens for Modzy, Dropbox, and Label Studio
  * Run `$ source .env` to load your environment variables
- * Update the `base_url` variable in [inference.py](inference.py) to the URL of your instance of Modzy
- * Update the `base_url` variable in [import-annotations.py](import-annotations.py) to the URL of your instance of Modzy
  * Update the `labelStudioURL` variable in [import-annotations.py](import-annotations.py) to the URL of your instance of Label Studio
 
 ## Usage
 
 ### Send sample images to Modzy and Dropbox
-The next step will send the images in the `/images` folder to a model that executes "Image-based Geolocation" which means that it will try to predict where the world the image was taken. Then, the image will be uploaded to Dropbox.
+The next step will send the images in the [/images-test](/images-test) folder to a model that executes "Image-based Geolocation" which means that it will try to predict where the world the image was taken. Then the image will be uploaded to Dropbox.
 
 In your terminal run:
 

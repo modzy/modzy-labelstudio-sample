@@ -1,50 +1,52 @@
 <View>
-  <Image name="image" value="$image" />
-  <Choices name="location" toName="image">
-    <Choice value="Beijing, Asia" />
-    <Choice value="Bangkok, Asia" />
-    <Choice value="Delhi, Asia" />
-    <Choice value="Hong Kong, Asia" />
-    <Choice value="Indonesia, Asia" />
-    <Choice value="Tokyo, Asia" />
-    <Choice value="Sydney, Australia" />
-    <Choice value="Havana, Carribbean" />
-    <Choice value="Central America" />
-    <Choice value="Mexico City, Central America" />
-    <Choice value="Moscow, Eastern-Europe" />
-    <Choice value="Saint Petersburg, Eastern-Europe" />
-    <Choice value="Amsterdam, Europe" />
-    <Choice value="Athens, Europe" />
-    <Choice value="Barcelona, Europe" />
-    <Choice value="Berlin, Europe" />
-    <Choice value="Budapest, Europe" />
-    <Choice value="Dublin, Europe" />
-    <Choice value="Florence, Europe" />
-    <Choice value="Helsinki, Europe" />
-    <Choice value="Lisbon, Europe" />
-    <Choice value="London, Europe" />
-    <Choice value="Madrid, Europe" />
-    <Choice value="Paris, Europe" />
-    <Choice value="Rome, Europe" />
-    <Choice value="Valencia, Europe" />
-    <Choice value="Cairo, Northern Africa" />
-    <Choice value="Middle East" />
-    <Choice value="Dubai, Middle East" />
-    <Choice value="Istanbul, Middle East" />
-    <Choice value="Chicago, North America" />
-    <Choice value="Dallas, North America" />
-    <Choice value="Denver, North America" />
-    <Choice value="Los Angeles, North America" />
-    <Choice value="New York, North America" />
-    <Choice value="Quebec City, North America" />
-    <Choice value="San Francisco, North America" />
-    <Choice value="Toronto, North America" />
-    <Choice value="Vancouver, North America" />
-    <Choice value="Northwestern Africa" />
-    <Choice value="Buenos Aires, South America" />
-    <Choice value="Rio, South America" />
-    <Choice value="Santiago, South America" />
-    <Choice value="Sub-Saharan Africa" />
-    <Choice value="Cape Town, Sub-Saharan Africa" />
+  <Image name="image" value="$image" zoomControl="true" zoom="true" rotateControl="false"/>
+  <Text name="model-prediction" value="$predicted_value" granularity="word" highlightColor="#ff0000"/>
+  <Text name="explainable-url" value="$explainable_url" granularity="word" highlightColor="#ff0000"/>  
+    <Choices name="location" toName="image" strokeWidth="1">
+    <Choice value="Beijing, Asia"/>
+    <Choice value="Bangkok, Asia"/>
+    <Choice value="Delhi, Asia"/>
+    <Choice value="Hong Kong, Asia"/>
+    <Choice value="Indonesia, Asia"/>
+    <Choice value="Tokyo, Asia"/>
+    <Choice value="Sydney, Australia"/>
+    <Choice value="Havana, Carribbean"/>
+    <Choice value="Central America"/>
+    <Choice value="Mexico City, Central America"/>
+    <Choice value="Moscow, Eastern-Europe"/>
+    <Choice value="Saint Petersburg, Eastern-Europe"/>
+    <Choice value="Amsterdam, Europe"/>
+    <Choice value="Athens, Europe"/>
+    <Choice value="Barcelona, Europe"/>
+    <Choice value="Berlin, Europe"/>
+    <Choice value="Budapest, Europe"/>
+    <Choice value="Dublin, Europe"/>
+    <Choice value="Florence, Europe"/>
+    <Choice value="Helsinki, Europe"/>
+    <Choice value="Lisbon, Europe"/>
+    <Choice value="London, Europe"/>
+    <Choice value="Madrid, Europe"/>
+    <Choice value="Paris, Europe"/>
+    <Choice value="Rome, Europe"/>
+    <Choice value="Valencia, Europe"/>
+    <Choice value="Cairo, Northern Africa"/>
+    <Choice value="Middle East"/>
+    <Choice value="Dubai, Middle East"/>
+    <Choice value="Istanbul, Middle East"/>
+    <Choice value="Chicago, North America"/>
+    <Choice value="Dallas, North America"/>
+    <Choice value="Denver, North America"/>
+    <Choice value="Los Angeles, North America"/>
+    <Choice value="New York, North America"/>
+    <Choice value="Quebec City, North America"/>
+    <Choice value="San Francisco, North America"/>
+    <Choice value="Toronto, North America"/>
+    <Choice value="Vancouver, North America"/>
+    <Choice value="Northwestern Africa"/>
+    <Choice value="Buenos Aires, South America"/>
+    <Choice value="Rio, South America"/>
+    <Choice value="Santiago, South America"/>
+    <Choice value="Sub-Saharan Africa"/>
+    <Choice value="Cape Town, Sub-Saharan Africa"/>
   </Choices>
 </View>

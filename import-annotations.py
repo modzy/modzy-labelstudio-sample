@@ -3,13 +3,11 @@ import dropbox
 import requests
 from modzy import ApiClient
 
-#Initialize dropbox and modzy clients
-dbx = dropbox.Dropbox(os.environ.get("DROPBOX_ACCESS_TOKEN"))
-client = ApiClient(base_url="https://demo.modzy.engineering/api", api_key=os.getenv("MODZY_API_KEY"))
+#Initialize Modzy and Dropbox clients
+dbx = dropbox.Dropbox(os.getenv("DROPBOX_ACCESS_TOKEN"))
+client = ApiClient(base_url=os.getenv("MODZY_BASE_URL"), api_key=os.getenv("MODZY_API_KEY"))
 
 def main():
-  # define image paths, image urls
-  MODEL_VERSION = "1.0.1"
 
   #Loops through all images in a dropbox folder and adds the image names and URLs to a dict
   jobs = []
@@ -30,24 +28,28 @@ def main():
   # next query results
   results_data = {}
   for i, job in enumerate(jobs):
+    job_details = client.jobs.get(job)
     result = client.results.block_until_complete(job)
     input_filename = list(result["results"].keys())[0]
     results_data[f'job_{i}'] = {
       "job_id": job,
       "input_name": input_filename,
+      "model_version": job_details["model"]["version"],
       "label": result["results"][input_filename]["results.json"]["data"]["result"]["classPredictions"][0]["class"],
       "score": result["results"][input_filename]["results.json"]["data"]["result"]["classPredictions"][0]["score"],
       "num_upvotes": result["results"][input_filename]["voting"]["up"],
       "num_downvotes": result["results"][input_filename]["voting"]["down"]
     }  
-    print(f"Results saved for {job}")
 
   data = [{
     "data": {
-      "image": path_urls[results_data[f'job_{i}']["job_id"]]
+      "image": path_urls[results_data[f'job_{i}']["job_id"]],
+      "predicted_value": "Predicted value: " + results_data[f'job_{i}']["label"] + " (" + str(results_data[f'job_{i}']["score"]) + " certainty) 👍: " + str(results_data[f'job_{i}']["num_upvotes"]) + " 👎: " + str(results_data[f'job_{i}']["num_downvotes"]),
+      "downvotes": results_data[f'job_{i}']["num_downvotes"],
+      "explainable_url": "Explanability link TBD"
     },
     "predictions": [{
-      "model_version": MODEL_VERSION,
+      "model_version": results_data[f'job_{i}']["model_version"],
       "score": results_data[f'job_{i}']["score"],
       "result": [
         {
@@ -64,7 +66,7 @@ def main():
 
   #Posts pre-annotated image links and results to Label Studio
   labelStudioURL = 'http://localhost:8080/api/projects/1/import'
-  authHeader = 'Token ' + os.environ.get("LABEL_STUDIO_ACCESS_TOKEN")
+  authHeader = 'Token ' + os.getenv("LABEL_STUDIO_ACCESS_TOKEN")
   r = requests.post(labelStudioURL, json=data, headers={'Authorization': authHeader})
 
 def get_dropbox_URL(image_path): 

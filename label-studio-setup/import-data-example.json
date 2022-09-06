@@ -1,6 +1,9 @@
 [{
   "data": {
-    "image": "https://previews.dropbox.com/p/thumb/ABpFAjvEwRGMRYPekWNnSYAEjfYlaKAEtqx_UEGtV8yPzWvT41VWUPGWA64JI8rUm4gdsYr7I3dCC0ztGsf9lEx_x2GIcWZdw8JMKEVFO_iTpA38jq520nS-DhSld9BKvxoMZ1hKGEtZEXlHHxyk5vn22gfj1iB3ZAT2KifeAql7dqZ7Li212LtSBVJ1w6WgcoIirG0PEVEpOH9H0mm4NchnTpq71PuHMUPwZe-MnRuwUCKTVdrBMxDKcdE8CFoxsSxeSAWVOUjtInnJRk-L71mp84I3-xzrpV65fLmzoShyddGOsn_LGQsvAhoKbbkqT0agaCy9jIzqRb6AdYV9_lnkUFAjf5GGFzyLM9WQILMBzbgfIToU2YgiviJTHmir96g/p.jpeg" 
+    "image": "https://previews.dropbox.com/p/thumb/ABoZ4RLVesaGXXeizYm-rQPX5oFGRQjp2GvdImFtLKoKcrNHml0f8pOLIBlPsDKQ5x5Exd1xRxhOTMfftLlHl_fuRWjr5Pt_OB6LcaVpJ1FFvQJ3eh7ed5fXvcUyYhEXG4VZhu_HrzsoZgkTN747rTQKG2xbgsDP4cYkFveQhzFDvdBke6Un4hainsXvzjfYzizT3CJ16tjTLa-R98ubV-ePfdlARAA2rjNIIS61FOIrIwFruMMIqIHloM5ZXC11iRt7LDH88UF7nmRvZclZqrXaS8rM0QwaueASVzdaHIpU2NusnUzHKlh0CwBqEyZ1iBP83NJ5fnpq9HAKxoGVZj3LK2JKzDjhbAAaAqY9F_wg4wi-f7v9n5DMCkYG2TAdfpo/p.jpeg",
+    "predicted_value":  "Predicted value: Cairo, Northern Africa (98.6% certainty) 👍: 10 👎: 2",
+    "downvotes": 2,
+    "explainable_url": "https://demo.modzy.engineering"
   },
   "predictions": [{
     "model_version": "1.0.1",

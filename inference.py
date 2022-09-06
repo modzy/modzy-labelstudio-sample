@@ -3,9 +3,9 @@ import os
 from modzy import ApiClient
 from modzy._util import file_to_bytes
 
-#Creates a Modzy client
-client = ApiClient(base_url="https://demo.modzy.engineering/api", api_key=os.environ.get("MODZY_API_KEY"))
-dbx = dropbox.Dropbox(os.environ.get("DROPBOX_ACCESS_TOKEN"))
+#Initialize Modzy and Dropbox clients
+client = ApiClient(base_url=os.getenv("MODZY_BASE_URL"), api_key=os.getenv("MODZY_API_KEY"))
+dbx = dropbox.Dropbox(os.getenv("DROPBOX_ACCESS_TOKEN"))
 
 def main():
     #Runs an inference on each image in this folder and then save the image to Dropbox
@@ -28,7 +28,9 @@ def modzy_inference(image_path,image_ID):
     }
 
     #Submits the image to a model that performs Image-based Geolocation
-    job = client.jobs.submit_file("aevbu1h3yw", "1.0.1", sources, True)
+    model_id = "aevbu1h3yw"
+    model_version = "1.0.1"
+    job = client.jobs.submit_file(model_id, model_version, sources, explain=True)
     return job.get("jobIdentifier")
 
 def upload_image(image_path,image_ID):    

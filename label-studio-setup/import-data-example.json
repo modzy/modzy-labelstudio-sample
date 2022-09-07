@@ -1,9 +1,9 @@
 [{
   "data": {
-    "image": "https://previews.dropbox.com/p/thumb/ABoZ4RLVesaGXXeizYm-rQPX5oFGRQjp2GvdImFtLKoKcrNHml0f8pOLIBlPsDKQ5x5Exd1xRxhOTMfftLlHl_fuRWjr5Pt_OB6LcaVpJ1FFvQJ3eh7ed5fXvcUyYhEXG4VZhu_HrzsoZgkTN747rTQKG2xbgsDP4cYkFveQhzFDvdBke6Un4hainsXvzjfYzizT3CJ16tjTLa-R98ubV-ePfdlARAA2rjNIIS61FOIrIwFruMMIqIHloM5ZXC11iRt7LDH88UF7nmRvZclZqrXaS8rM0QwaueASVzdaHIpU2NusnUzHKlh0CwBqEyZ1iBP83NJ5fnpq9HAKxoGVZj3LK2JKzDjhbAAaAqY9F_wg4wi-f7v9n5DMCkYG2TAdfpo/p.jpeg",
+    "image": "https://images.unsplash.com/photo-1622805206221-bbbb21e28ac3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80",
     "predicted_value":  "Predicted value: Cairo, Northern Africa (98.6% certainty) 👍: 10 👎: 2",
     "downvotes": 2,
-    "explainable_url": "https://demo.modzy.engineering"
+    "explainable_url": "<MODZY_URL>/operations/explainability/765d88f8-1239-41e8-854a-8b66f7ac0cca/abdullah-elhariry-wi1hwvGlPfA-unsplash.jpg"
   },
   "predictions": [{
     "model_version": "1.0.1",

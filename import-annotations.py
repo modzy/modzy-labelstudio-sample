@@ -3,9 +3,9 @@ import dropbox
 import requests
 from modzy import ApiClient
 
-#Initialize Modzy and Dropbox clients
+#Initializes Modzy and Dropbox clients
+mdz = ApiClient(base_url=os.getenv('MODZY_BASE_URL'), api_key=os.getenv("MODZY_API_KEY"))
 dbx = dropbox.Dropbox(os.getenv("DROPBOX_ACCESS_TOKEN"))
-mdz = ApiClient(base_url=f"{os.getenv('MODZY_BASE_URL')}/api", api_key=os.getenv("MODZY_API_KEY"))
 
 def main():
 
@@ -18,7 +18,7 @@ def main():
     jobs.append(job_ID)
     path_urls[job_ID] = get_dropbox_URL(image.path_display)
 
-  # next query results
+  #Creates a dictionary with all of the inference information that will be sent to Label Studio
   results_data = {}
   for i, job in enumerate(jobs):
     job_details = mdz.jobs.get(job)
@@ -34,6 +34,7 @@ def main():
       "num_downvotes": result["results"][input_filename]["voting"]["down"]
     }  
 
+  # Creates the data object that Label Studio is expecting for our template
   data = [{
     "data": {
       "image": path_urls[results_data[f'job_{i}']["job_id"]],
@@ -59,23 +60,23 @@ def main():
 
   #Posts pre-annotated image links and results to Label Studio
   labelStudioURL = 'http://localhost:8080/api/projects/1/import'
-  authHeader = 'Token ' + os.getenv("LABEL_STUDIO_ACCESS_TOKEN")
+  authHeader = f"Token {os.getenv('LABEL_STUDIO_ACCESS_TOKEN')}"
   r = requests.post(labelStudioURL, json=data, headers={'Authorization': authHeader})
 
+#Gets shareable link from dropbox
 def get_dropbox_URL(image_path): 
-  #Gets shareable link from dropbox
   sharedURL = dbx.sharing_create_shared_link(image_path).url
   cleanURL = sharedURL.replace("dl=0","raw=1")
   return cleanURL
 
+#Formats the message included with each labeling task
 def predicted_value_msg(label, score, upvotes, downvotes):
   msg = f"Predicted value: {label} ({score:.1%} certainty) 👍: {upvotes} 👎: {downvotes}"
-  print(msg)
   return msg
 
+#Formats the URL to view the explanation of each prediction
 def explainable_url(job_ID, input_name):
   url = f"{os.getenv('MODZY_BASE_URL')}/operations/explainability/{job_ID}/{input_name}"
-  print(url)
   return url
 
 if __name__ == '__main__':

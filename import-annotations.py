@@ -5,7 +5,7 @@ from modzy import ApiClient
 
 #Initialize Modzy and Dropbox clients
 dbx = dropbox.Dropbox(os.getenv("DROPBOX_ACCESS_TOKEN"))
-client = ApiClient(base_url=os.getenv("MODZY_BASE_URL"), api_key=os.getenv("MODZY_API_KEY"))
+mdz = ApiClient(base_url=f"{os.getenv('MODZY_BASE_URL')}/api", api_key=os.getenv("MODZY_API_KEY"))
 
 def main():
 
@@ -18,18 +18,11 @@ def main():
     jobs.append(job_ID)
     path_urls[job_ID] = get_dropbox_URL(image.path_display)
 
-  '''
-  The remainder of this script can be adopted to generalize the programmatic creation of the label studio pre-annotations data.
-  There are two things the user must prepare to leverage the below code:
-    1. Assemble all image URLs into a dictionary where each key-value pair represents the image name (e.g., image.jpg), and the corresponding value represents the full image URL
-    2. Query all job IDs in Modzy to query results for
-  '''
-
   # next query results
   results_data = {}
   for i, job in enumerate(jobs):
-    job_details = client.jobs.get(job)
-    result = client.results.block_until_complete(job)
+    job_details = mdz.jobs.get(job)
+    result = mdz.results.block_until_complete(job)
     input_filename = list(result["results"].keys())[0]
     results_data[f'job_{i}'] = {
       "job_id": job,
@@ -44,9 +37,9 @@ def main():
   data = [{
     "data": {
       "image": path_urls[results_data[f'job_{i}']["job_id"]],
-      "predicted_value": "Predicted value: " + results_data[f'job_{i}']["label"] + " (" + str(results_data[f'job_{i}']["score"]) + " certainty) 👍: " + str(results_data[f'job_{i}']["num_upvotes"]) + " 👎: " + str(results_data[f'job_{i}']["num_downvotes"]),
+      "predicted_value": predicted_value_msg(results_data[f'job_{i}']["label"], results_data[f'job_{i}']["score"], results_data[f'job_{i}']["num_upvotes"], results_data[f'job_{i}']["num_downvotes"]),
       "downvotes": results_data[f'job_{i}']["num_downvotes"],
-      "explainable_url": f'{os.getenv("MODZY_BASE_URL")}/operations/explainability/{results_data["job_{}".format(i)]["job_id"]}/{results_data["job_{}".format(i)]["input_name"]}'
+      "explainable_url": explainable_url(results_data[f'job_{i}']["job_id"], results_data[f'job_{i}']["input_name"])
     },
     "predictions": [{
       "model_version": results_data[f'job_{i}']["model_version"],
@@ -74,6 +67,16 @@ def get_dropbox_URL(image_path):
   sharedURL = dbx.sharing_create_shared_link(image_path).url
   cleanURL = sharedURL.replace("dl=0","raw=1")
   return cleanURL
+
+def predicted_value_msg(label, score, upvotes, downvotes):
+  msg = f"Predicted value: {label} ({score:.1%} certainty) 👍: {upvotes} 👎: {downvotes}"
+  print(msg)
+  return msg
+
+def explainable_url(job_ID, input_name):
+  url = f"{os.getenv('MODZY_BASE_URL')}/operations/explainability/{job_ID}/{input_name}"
+  print(url)
+  return url
 
 if __name__ == '__main__':
     main()

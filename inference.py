@@ -24,6 +24,8 @@ def main():
         #Uploads the image to Dropbox and names it after the inference job ID number
         upload_image(f,job_ID)
 
+        print(f"Inference ID {job_ID} complete")
+
 #Submits an image to a model that performs Image-based Geolocation
 def modzy_inference(image_path,image_ID):
     

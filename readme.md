@@ -44,7 +44,7 @@ Before you can start running the sample images as inferences, you'll need to do 
 ## Usage
 
 ### Send sample images to Modzy and Dropbox
-The next step will send the images in the [/images-test](/images-test) folder to a model that executes "Image-based Geolocation" which means that it will try to predict where the world the image was taken. Then the image will be uploaded to Dropbox.
+The next step will send the images in the [/images-test](/images-test) folder to a model that executes "Image-based Geolocation" which means that it will try to predict where in the world the image was taken. Then the image will be uploaded to Dropbox.
 
 In your terminal run:
 

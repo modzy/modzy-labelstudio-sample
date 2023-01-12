@@ -11,20 +11,22 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/modzy/modzy-labelstudio-sample?logo=GitHub&style=flat-square)
 
-
 :tv: ***Follow along on YouTube: https://youtu.be/ZOxeNHzIbfg***
 </div>
+
 This sample project demonstrates how to use Modzy and Label studio to dynamically re-label production inferences using a combination of semi-supervised learning, explainable AI, and human-in-the-loop review. This is a comprehensive and low-lift way to create training data sets from production data that can be used to retrain a machine learning model.
 
+<div align="center">
+  <img src="data-labelling-cycle.png" alt="data labelling flowchart with Modzy, Dropbox, and LabelStudio" width="650"/>
+</div>
+
 This sample project uses:
+  
+<img src="https://uploads-ssl.webflow.com/6398af713cc658e4d10fb05c/6398afffac140f04f61fa4d0_modzy-logo.svg" alt="Modzy logo" width="65"/>For model inference and explainability</p>
 
-<img src="https://uploads-ssl.webflow.com/6398af713cc658e4d10fb05c/6398afffac140f04f61fa4d0_modzy-logo.svg" alt="Modzy logo" width="65"/>    For model inference and explainability
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Dropbox_logo_2017.svg/2560px-Dropbox_logo_2017.svg.png" alt="Dropbox logo" width="85"/>As a makeshift data lake for storing images
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Dropbox_logo_2017.svg/2560px-Dropbox_logo_2017.svg.png" alt="Modzy logo" width="85"/>    As a makeshift data lake for storing images
-
-<img src="https://assets.website-files.com/612013f17754cb859455543d/6120e2acee27ae27a0514ccb_logofirst.svg" alt="Modzy logo" width="115"/>    For labeling production inference results
-
-<img src="data-labelling-graphic.png" alt="data labelling flowchart with Modzy, Dropbox, and LabelStudio" width="300"/>
+<img src="https://assets.website-files.com/612013f17754cb859455543d/6120e2acee27ae27a0514ccb_logofirst.svg" alt="LabelStudio logo" width="115"/>For labeling production inference results
 
 ## Installation & Set-Up
 

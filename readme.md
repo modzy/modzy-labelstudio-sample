@@ -1,5 +1,9 @@
 # Modzy - Label Studio Sample Project
 
+![Modzy-LabelStudio project banner](modzy-labelstudio-project-header.png)
+
+<div align="center">
+
 ![GitHub contributors](https://img.shields.io/github/contributors/modzy/modzy-labelstudio-sample?logo=github&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/modzy/modzy-labelstudio-sample?logo=GitHub&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues-raw/modzy/modzy-labelstudio-sample?logo=github&style=flat-square)
@@ -9,7 +13,7 @@
 
 
 :tv: ***Follow along on YouTube: https://youtu.be/ZOxeNHzIbfg***
-
+</div>
 This sample project demonstrates how to use Modzy and Label studio to dynamically re-label production inferences using a combination of semi-supervised learning, explainable AI, and human-in-the-loop review. This is a comprehensive and low-lift way to create training data sets from production data that can be used to retrain a machine learning model.
 
 This sample project uses:
@@ -19,6 +23,8 @@ This sample project uses:
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Dropbox_logo_2017.svg/2560px-Dropbox_logo_2017.svg.png" alt="Modzy logo" width="85"/>    As a makeshift data lake for storing images
 
 <img src="https://assets.website-files.com/612013f17754cb859455543d/6120e2acee27ae27a0514ccb_logofirst.svg" alt="Modzy logo" width="115"/>    For labeling production inference results
+
+<img src="data-labelling-graphic.png" alt="data labelling flowchart with Modzy, Dropbox, and LabelStudio" width="300"/>
 
 ## Installation & Set-Up
 

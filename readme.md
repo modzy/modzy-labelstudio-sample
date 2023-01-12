@@ -1,3 +1,5 @@
+# Modzy - Label Studio Sample Project
+
 ![GitHub contributors](https://img.shields.io/github/contributors/modzy/modzy-labelstudio-sample?logo=github&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/modzy/modzy-labelstudio-sample?logo=GitHub&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues-raw/modzy/modzy-labelstudio-sample?logo=github&style=flat-square)
@@ -5,12 +7,14 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/modzy/modzy-labelstudio-sample?logo=GitHub&style=flat-square)
 
-# Modzy - Label Studio Sample Project
+
+:tv: ***Follow along on YouTube: https://youtu.be/ZOxeNHzIbfg***
+
 This sample project demonstrates how to use Modzy and Label studio to dynamically re-label production inferences using a combination of semi-supervised learning, explainable AI, and human-in-the-loop review. This is a comprehensive and low-lift way to create training data sets from production data that can be used to retrain a machine learning model.
 
 This sample project uses:
 
-<img src="https://www.modzy.com/wp-content/uploads/modzy-logo.png" alt="Modzy logo" width="75"/>    For model inference and explainability
+<img src="https://uploads-ssl.webflow.com/6398af713cc658e4d10fb05c/6398afffac140f04f61fa4d0_modzy-logo.svg" alt="Modzy logo" width="65"/>    For model inference and explainability
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Dropbox_logo_2017.svg/2560px-Dropbox_logo_2017.svg.png" alt="Modzy logo" width="85"/>    As a makeshift data lake for storing images
 
